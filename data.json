@@ -1,0 +1,39 @@
+{
+  "topics": [
+    {
+      "id": "setup",
+      "title": "1. Python Setup & Variables",
+      "content": "<p>Python variables are created when you assign a value to them.</p>",
+      "code": "x = 5\nname = 'Alice'\nprint(x, name)",
+      "output": "5 Alice",
+      "quiz": [
+        {
+          "question": "Which of the following is a valid variable name?",
+          "options": ["1_name", "name_1", "-name", "name!"],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "lists",
+      "title": "2. Lists & Tuples",
+      "content": "<p>Lists are mutable, meaning they can be changed. Tuples are immutable.</p>",
+      "code": "my_list = [1, 2, 3]\nmy_list.append(4)\nprint(my_list)",
+      "output": "[1, 2, 3, 4]",
+      "quiz": [
+        {
+          "question": "Are Python lists mutable?",
+          "options": ["Yes", "No", "Only if empty", "Depends on the OS"],
+          "answer": 0
+        }
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "question": "What is the output of print(2 ** 3)?",
+      "options": ["6", "8", "9", "Error"],
+      "answer": 1
+    }
+  ]
+}
