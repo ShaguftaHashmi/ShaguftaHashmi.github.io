@@ -1,39 +1,161 @@
 {
   "topics": [
     {
-      "id": "setup",
-      "title": "1. Python Setup & Variables",
-      "content": "<p>Python variables are created when you assign a value to them.</p>",
-      "code": "x = 5\nname = 'Alice'\nprint(x, name)",
-      "output": "5 Alice",
+      "id": "setup-vars",
+      "title": "1. Setup, Variables & Data Types",
+      "content": "<p>Python is an interpreted, high-level language. Variables are created the moment you first assign a value to them. Python has standard data types like Integers, Floats, Strings, and Booleans.</p>",
+      "code": "x = 10\ny = 3.14\nname = \"Alice\"\nis_student = True\n\nprint(type(x))\nprint(type(name))",
+      "output": "<class 'int'>\n<class 'str'>",
+      "coding_questions": [
+        "Write a Python script to create three variables (name, age, height) and print them in a single line.",
+        "Check the data type of the variable `val = 5.5` using the type() function."
+      ],
       "quiz": [
-        {
-          "question": "Which of the following is a valid variable name?",
-          "options": ["1_name", "name_1", "-name", "name!"],
-          "answer": 1
-        }
+        { "question": "Which of the following is a valid variable name?", "options": ["1_name", "name_1", "-name", "name!"], "answer": 1 },
+        { "question": "What data type is the value True?", "options": ["String", "Integer", "Boolean", "Float"], "answer": 2 }
       ]
     },
     {
-      "id": "lists",
-      "title": "2. Lists & Tuples",
-      "content": "<p>Lists are mutable, meaning they can be changed. Tuples are immutable.</p>",
-      "code": "my_list = [1, 2, 3]\nmy_list.append(4)\nprint(my_list)",
-      "output": "[1, 2, 3, 4]",
+      "id": "operators-strings",
+      "title": "2. Operators & String Operations",
+      "content": "<p>Operators are used to perform operations on variables and values. Strings in Python are arrays of bytes representing unicode characters. You can slice, concatenate, and format strings easily.</p>",
+      "code": "text = \"Hello World\"\nprint(text.upper())\nprint(text[0:5]) # Slicing\n\n# Arithmetic\nresult = 10 % 3 # Modulus\nprint(f\"Remainder is {result}\")",
+      "output": "HELLO WORLD\nHello\nRemainder is 1",
+      "coding_questions": [
+        "Write a program to reverse a string using slicing.",
+        "Calculate the area of a circle with radius 7 (use ** operator for exponents)."
+      ],
       "quiz": [
-        {
-          "question": "Are Python lists mutable?",
-          "options": ["Yes", "No", "Only if empty", "Depends on the OS"],
-          "answer": 0
-        }
+        { "question": "What is the output of 10 // 3?", "options": ["3.33", "3", "1", "0"], "answer": 1 },
+        { "question": "How do you get the length of a string named 'txt'?", "options": ["txt.length()", "len(txt)", "length(txt)", "size(txt)"], "answer": 1 }
+      ]
+    },
+    {
+      "id": "lists-tuples",
+      "title": "3. Lists & Tuples",
+      "content": "<p><strong>Lists</strong> are ordered, mutable (changeable) collections written with square brackets. <strong>Tuples</strong> are ordered but immutable (unchangeable) collections written with parentheses.</p>",
+      "code": "# List\nfruits = [\"apple\", \"banana\"]\nfruits.append(\"cherry\")\nprint(fruits)\n\n# Tuple\ncoords = (10, 20)\nprint(coords[0])",
+      "output": "['apple', 'banana', 'cherry']\n10",
+      "coding_questions": [
+        "Create a list of 5 numbers and append the number 99 to the end of it.",
+        "Attempt to change the first element of a Tuple and observe the TypeError."
+      ],
+      "quiz": [
+        { "question": "Are Python lists mutable?", "options": ["Yes", "No", "Only if empty", "Depends on OS"], "answer": 0 },
+        { "question": "Which bracket is used to define a Tuple?", "options": ["[]", "{}", "()", "<>"], "answer": 2 }
+      ]
+    },
+    {
+      "id": "sets-dicts",
+      "title": "4. Sets, Dictionaries & Nested Structures",
+      "content": "<p><strong>Sets</strong> are unordered, unindexed, and do not allow duplicate values. <strong>Dictionaries</strong> store data in key:value pairs.</p>",
+      "code": "unique_nums = {1, 2, 2, 3}\nprint(unique_nums)\n\nuser = {\n  \"name\": \"John\",\n  \"skills\": [\"Python\", \"HTML\"]\n}\nprint(user[\"skills\"][0])",
+      "output": "{1, 2, 3}\nPython",
+      "coding_questions": [
+        "Create a dictionary representing a car with keys for brand, model, and year.",
+        "Convert a list with duplicates into a set to remove the duplicates."
+      ],
+      "quiz": [
+        { "question": "Which collection does not allow duplicate members?", "options": ["List", "Tuple", "Dictionary", "Set"], "answer": 3 },
+        { "question": "How do you access the value of 'name' in dictionary 'd'?", "options": ["d.name", "d('name')", "d['name']", "d[name]"], "answer": 2 }
+      ]
+    },
+    {
+      "id": "conditions-loops",
+      "title": "5. Conditions & Loops",
+      "content": "<p>Python relies on indentation to define scope in loops and if-statements. `for` loops iterate over sequences, while `while` loops execute as long as a condition is true.</p>",
+      "code": "age = 20\nif age >= 18:\n    print(\"Adult\")\nelse:\n    print(\"Minor\")\n\nfor i in range(3):\n    print(i)",
+      "output": "Adult\n0\n1\n2",
+      "coding_questions": [
+        "Write a `for` loop to print all even numbers from 1 to 10.",
+        "Write an `if/elif/else` block to grade a student's score."
+      ],
+      "quiz": [
+        { "question": "Which keyword stops a loop completely?", "options": ["stop", "break", "continue", "exit"], "answer": 1 },
+        { "question": "What does range(5) generate?", "options": ["1 to 5", "0 to 5", "0 to 4", "1 to 4"], "answer": 2 }
+      ]
+    },
+    {
+      "id": "functions",
+      "title": "6. Functions",
+      "content": "<p>A function is a block of code which only runs when it is called. You define them using the <code>def</code> keyword.</p>",
+      "code": "def greet(name=\"Guest\"):\n    return f\"Hello, {name}!\"\n\nprint(greet(\"Alice\"))\nprint(greet())",
+      "output": "Hello, Alice!\nHello, Guest!",
+      "coding_questions": [
+        "Create a function `multiply(a, b)` that returns the product of two numbers.",
+        "Write a function that checks if a passed string is a palindrome."
+      ],
+      "quiz": [
+        { "question": "Which keyword is used to create a function?", "options": ["function", "def", "create", "func"], "answer": 1 },
+        { "question": "How do you return a value from a function?", "options": ["output", "send", "return", "yield"], "answer": 2 }
+      ]
+    },
+    {
+      "id": "file-lambda",
+      "title": "7. File Handling, Comprehensions, Lambda",
+      "content": "<p><strong>List Comprehension</strong> provides a shorter syntax to create lists. <strong>Lambda</strong> is a small anonymous function. <strong>File Handling</strong> uses the `open()` function.</p>",
+      "code": "# List Comprehension\nsquares = [x**2 for x in range(4)]\nprint(squares)\n\n# Lambda\nadd = lambda a, b: a + b\nprint(add(5, 3))\n\n# Note: File handling code skipped for output safety",
+      "output": "[0, 1, 4, 9]\n8",
+      "coding_questions": [
+        "Use list comprehension to create a list of all odd numbers from 1 to 20.",
+        "Write a lambda function to multiply a number by 10."
+      ],
+      "quiz": [
+        { "question": "What is a lambda function?", "options": ["A multi-line function", "An anonymous function", "A class method", "A file handler"], "answer": 1 },
+        { "question": "Which mode is used to read a file?", "options": ["w", "a", "x", "r"], "answer": 3 }
+      ]
+    },
+    {
+      "id": "exception-handling",
+      "title": "8. Exception Handling",
+      "content": "<p>The <code>try</code> block lets you test code for errors. The <code>except</code> block lets you handle the error. The <code>finally</code> block executes regardless of the result.</p>",
+      "code": "try:\n    x = 10 / 0\nexcept ZeroDivisionError:\n    print(\"Cannot divide by zero!\")\nfinally:\n    print(\"Cleanup done.\")",
+      "output": "Cannot divide by zero!\nCleanup done.",
+      "coding_questions": [
+        "Write a try/except block to handle a ValueError when trying to cast the string 'hello' into an integer.",
+        "Open a file in a try block and close it in the finally block."
+      ],
+      "quiz": [
+        { "question": "Which block executes no matter what?", "options": ["try", "except", "finally", "catch"], "answer": 2 },
+        { "question": "How do you catch a specific error like TypeError?", "options": ["except TypeError:", "catch TypeError:", "on TypeError:", "handle TypeError:"], "answer": 0 }
+      ]
+    },
+    {
+      "id": "oops",
+      "title": "9. Object-Oriented Programming (OOPS)",
+      "content": "<p>Classes are blueprints for creating objects. Python supports inheritance, allowing a class to inherit methods and properties from another class.</p>",
+      "code": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\nclass Dog(Animal):\n    def bark(self):\n        return \"Woof!\"\n\nd = Dog(\"Buddy\")\nprint(d.name, d.bark())",
+      "output": "Buddy Woof!",
+      "coding_questions": [
+        "Create a `Car` class with attributes `make` and `model`, and a method `display_info()`.",
+        "Create a child class `ElectricCar` that inherits from `Car`."
+      ],
+      "quiz": [
+        { "question": "What is the primary function used to initialize class properties?", "options": ["__start__", "__init__", "__main__", "init()"], "answer": 1 },
+        { "question": "What does 'self' represent?", "options": ["The parent class", "The current instance of the class", "A built-in variable", "A keyword for loops"], "answer": 1 }
+      ]
+    },
+    {
+      "id": "polymorphism-json-apis",
+      "title": "10. Polymorphism, JSON & APIs",
+      "content": "<p><strong>Polymorphism</strong> means 'many forms', often used when child classes override parent methods. <strong>JSON</strong> is text used for storing data. <strong>APIs</strong> are used to request data over the web.</p>",
+      "code": "import json\n\n# Parsing JSON string to Python dict\njson_data = '{\"name\": \"Alice\", \"age\": 25}'\npython_dict = json.loads(json_data)\n\nprint(python_dict[\"name\"])\n# Requests library is used for APIs: requests.get('url')",
+      "output": "Alice",
+      "coding_questions": [
+        "Convert a Python dictionary `{'city': 'London', 'temp': 15}` into a JSON string using `json.dumps()`.",
+        "Write two classes, Cat and Dog, that both have a `make_sound()` method returning different strings (Polymorphism)."
+      ],
+      "quiz": [
+        { "question": "Which module is required to parse JSON in Python?", "options": ["json", "xml", "requests", "parser"], "answer": 0 },
+        { "question": "What does API stand for?", "options": ["Application Programming Interface", "Advanced Python Instructions", "Automated Program Integration", "Application Protocol Internet"], "answer": 0 }
       ]
     }
   ],
   "assessment": [
-    {
-      "question": "What is the output of print(2 ** 3)?",
-      "options": ["6", "8", "9", "Error"],
-      "answer": 1
-    }
+    { "question": "Which of these is NOT a core Python data type?", "options": ["List", "Dictionary", "Tuple", "Class"], "answer": 3 },
+    { "question": "What is the output of print(2 ** 3)?", "options": ["6", "8", "9", "Error"], "answer": 1 },
+    { "question": "Which method adds an item to the end of a list?", "options": ["add()", "insert()", "append()", "extend()"], "answer": 2 },
+    { "question": "What does JSON.loads() do?", "options": ["Loads a file", "Converts Python object to JSON string", "Converts JSON string to Python dictionary", "Installs a library"], "answer": 2 },
+    { "question": "Which keyword handles exceptions?", "options": ["catch", "except", "error", "handle"], "answer": 1 }
   ]
 }
