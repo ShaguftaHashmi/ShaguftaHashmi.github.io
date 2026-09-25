@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Study Material</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; display: flex; color: #333; }
+        nav { width: 250px; background-color: #2c3e50; color: white; height: 100vh; position: fixed; overflow-y: auto; padding-top: 20px; }
+        nav h2 { text-align: center; font-size: 1.2em; border-bottom: 1px solid #34495e; padding-bottom: 10px; margin: 0 15px; }
+        nav ul { list-style-type: none; padding: 0; }
+        nav ul li a { display: block; padding: 10px 20px; color: #ecf0f1; text-decoration: none; font-size: 0.9em; border-bottom: 1px solid #34495e; }
+        nav ul li a:hover { background-color: #34495e; }
+        main { margin-left: 250px; padding: 40px; width: 100%; max-width: 900px; line-height: 1.6; }
+        section { margin-bottom: 50px; padding-top: 20px; border-bottom: 1px solid #eee; }
+        h1 { color: #2980b9; }
+        h2 { color: #2c3e50; }
+        pre { background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; border: 1px solid #e9ecef; }
+        code { font-family: Consolas, monospace; color: #d63384; }
+        pre code { color: #212529; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h2>Python Guide</h2>
+        <ul>
+            <li><a href="#setup">Setup, Variables & Data Types</a></li>
+            <li><a href="#operators">Operators & String Operations</a></li>
+            <li><a href="#lists">Lists & Tuples</a></li>
+            <li><a href="#dicts">Sets, Dicts & Nested Structures</a></li>
+            <li><a href="#loops">Conditions & Loops</a></li>
+            <li><a href="#functions">Functions</a></li>
+            <li><a href="#file-handling">File Handling, Comprehension, Lambda</a></li>
+            <li><a href="#exceptions">Exception Handling</a></li>
+            <li><a href="#oops">OOPS</a></li>
+            <li><a href="#apis">Polymorphism, JSON & APIs</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Python Master Study Guide</h1>
+
+        <section id="setup">
+            <h2>1. Python Setup, Variables & Data Types</h2>
+            <p>Python is an interpreted, high-level language. Variables are created the moment you assign a value to them.</p>
+            <pre><code># Data Types
+x = 5             # int
+y = 3.14          # float
+name = "Alice"    # str
+is_active = True  # bool</code></pre>
+        </section>
+
+        <section id="operators">
+            <h2>2. Operators & String Operations</h2>
+            <p>Python supports arithmetic (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>//</code>, <code>%</code>), comparison, and logical operators.</p>
+            <pre><code>text = "Hello World"
+print(text.upper())       # HELLO WORLD
+print(text[0:5])          # Hello (Slicing)
+print(text + "!")         # Concatenation</code></pre>
+        </section>
+
+        <section id="lists">
+            <h2>3. Lists & Tuples</h2>
+            <p><strong>Lists</strong> are ordered, mutable collections. <strong>Tuples</strong> are ordered, immutable collections.</p>
+            <pre><code># List (Mutable)
+fruits = ["apple", "banana"]
+fruits.append("cherry")
+
+# Tuple (Immutable)
+coordinates = (10, 20)</code></pre>
+        </section>
+
+        <section id="dicts">
+            <h2>4. Sets, Dictionaries & Nested Structures</h2>
+            <p><strong>Sets</strong> store unique items. <strong>Dictionaries</strong> store key-value pairs.</p>
+            <pre><code>unique_numbers = {1, 2, 3, 3} # Result: {1, 2, 3}
+user = {
+    "name": "Bob",
+    "age": 25,
+    "skills": ["Python", "HTML"] # Nested List
+}</code></pre>
+        </section>
+
+        <section id="loops">
+            <h2>5. Conditions & Loops</h2>
+            <pre><code># Condition
+if age >= 18:
+    print("Adult")
+elif age > 12:
+    print("Teen")
+else:
+    print("Child")
+
+# Loops
+for i in range(3):
+    print(i) # Prints 0, 1, 2</code></pre>
+        </section>
+
+        <section id="functions">
+            <h2>6. Functions</h2>
+            <p>Functions are blocks of reusable code defined using the <code>def</code> keyword.</p>
+            <pre><code>def greet(name="Guest"):
+    return f"Hello, {name}!"
+
+print(greet("Alice"))</code></pre>
+        </section>
+
+        <section id="file-handling">
+            <h2>7. File Handling, List Comprehension, Lambda</h2>
+            <pre><code># List Comprehension (Short way to create lists)
+squares = [x**2 for x in range(5)]
+
+# Lambda (Anonymous function)
+add = lambda a, b: a + b
+
+# File Handling
+with open("data.txt", "w") as file:
+    file.write("Hello File!")</code></pre>
+        </section>
+
+        <section id="exceptions">
+            <h2>8. Exception Handling</h2>
+            <p>Used to handle runtime errors gracefully without crashing the program.</p>
+            <pre><code>try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+finally:
+    print("Execution complete.")</code></pre>
+        </section>
+
+        <section id="oops">
+            <h2>9. Object-Oriented Programming (OOPS)</h2>
+            <p>Python supports classes, objects, and inheritance.</p>
+            <pre><code>class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        pass
+
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"</code></pre>
+        </section>
+
+        <section id="apis">
+            <h2>10. Polymorphism, JSON & APIs</h2>
+            <p><strong>Polymorphism</strong> allows methods to do different things based on the object. <strong>JSON/APIs</strong> are used for data exchange.</p>
+            <pre><code>import json
+import requests
+
+# JSON Parsing
+data = '{"name": "Alice"}'
+parsed = json.loads(data)
+
+# API Request (Requires 'requests' library)
+response = requests.get("https://api.github.com")
+print(response.status_code)</code></pre>
+        </section>
+    </main>
+</body>
+</html>
